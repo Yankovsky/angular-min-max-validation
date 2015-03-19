@@ -1,6 +1,6 @@
-// credits go to angular team
-
-angular.module('common').directive('yaMin', function() {
+// All credits go to angular team
+angular.module('minMaxValidations', [
+]).directive('yaMin', function() {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -18,9 +18,7 @@ angular.module('common').directive('yaMin', function() {
             });
         }
     };
-});
-
-angular.module('common').directive('yaMax', function() {
+}).directive('yaMax', function() {
     return {
         restrict: 'A',
         require: 'ngModel',
