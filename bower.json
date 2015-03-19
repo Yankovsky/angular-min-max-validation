@@ -18,8 +18,9 @@
   ],
   "ignore": [
     "README.md",
-	"bower_components",
-    "index.html"
+    "bower_components",
+    "index.html",
+    ".gitignore"
   ],
   "license": "MIT",
   "dependencies": {
