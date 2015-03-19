@@ -3,7 +3,7 @@
     <form name='myForm' ng-app='app'>
         <div>MIN: <input name='min' type="number" ng-model='min'></div>
         <div>MAX: <input name='max' type="number" ng-model='max'></div>
-        <div>VALUE: <input name='value' type="text" ya-min='10' ya-max='max' ng-model='value' ng-change='huy(myForm)'></div>
+        <div>VALUE: <input name='value' type="text" ya-min='min' ya-max='max' ng-model='value'></div>
         <div ng-if='myForm.value.$error.min'>MIN ERROR</div>
         <div ng-if='myForm.value.$error.max'>MAX ERROR</div>
     </form>
