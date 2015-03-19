@@ -1,0 +1,27 @@
+{
+  "name": "angular-min-max-validation",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Yankovsky/angular-min-max-validation",
+  "authors": [
+    "Yankovsky Andrey <YankovskyAndrey@gmail.com>"
+  ],
+  "description": "min max validation for input(type='text') field",
+  "main": "angular-min-max-validation.js",
+  "keywords": [
+    "angular",
+    "min",
+    "max",
+    "validation",
+    "number",
+    "text",
+    "input"
+  ],
+  "ignore": [
+    "README.md",
+	"bower_components"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.15"
+  }
+}
