@@ -5,15 +5,20 @@ angular.module('minMaxValidations', [
         restrict: 'A',
         require: 'ngModel',
         link: function(scope, element, attrs, ctrl) {
-            var minVal;
+            var minValue;
             ctrl.$validators.min = function(value) {
-                return ctrl.$isEmpty(value) || angular.isUndefined(minVal) || value >= minVal;
+                if (ctrl.$isEmpty(value) || angular.isUndefined(minValue)) {
+                    return true;
+                } else {
+                    var valueAsNumber = angular.isNumber(value) ? value : parseFloat(value, 10);
+                    return valueAsNumber >= minValue;
+                }
             };
             scope.$watch(attrs.yaMin, function(value) {
                 if (angular.isDefined(value) && !angular.isNumber(value)) {
                     value = parseFloat(value, 10);
                 }
-                minVal = angular.isNumber(value) && !isNaN(value) ? value : undefined;
+                minValue = angular.isNumber(value) && !isNaN(value) ? value : undefined;
                 ctrl.$validate();
             });
         }
@@ -25,7 +30,12 @@ angular.module('minMaxValidations', [
         link: function(scope, element, attrs, ctrl) {
             var maxValue;
             ctrl.$validators.max = function(value) {
-                return ctrl.$isEmpty(value) || angular.isUndefined(maxValue) || value <= maxValue;
+                if (ctrl.$isEmpty(value) || angular.isUndefined(maxValue)) {
+                    return true;
+                } else {
+                    var valueAsNumber = angular.isNumber(value) ? value : parseFloat(value, 10);
+                    return valueAsNumber <= maxValue;
+                }
             };
 
             scope.$watch(attrs.yaMax, function(value) {
