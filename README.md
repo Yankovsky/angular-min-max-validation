@@ -1,7 +1,5 @@
 To install:
 
-`bower install --save ie-location-origin-polyfill`
+`bower install --save angular-min-max-validation`
 
-To use include polyfill before other scripts depending on it:
-
-`<script src='/path_to_bower_components/ie-location-origin-polyfill.js'`
+See jsfiddle for example use
