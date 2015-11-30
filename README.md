@@ -6,4 +6,6 @@ To install:
 
 `bower install --save angular-min-max-validation`
 
+`npm install --save-dev angular-min-max-validation`
+
 See [demo](http://yankovsky.github.io/angular-min-max-validation/).
