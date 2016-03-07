@@ -1,8 +1,8 @@
 {
   "name": "angular-min-max-validation",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "min max validation for input(type='text') field",
-  "main": "angular-min-max-validation.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

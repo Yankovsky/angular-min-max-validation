@@ -1,12 +1,19 @@
 <html>
 <head>
-    <form name='myForm' ng-app='app'>
+    <div ng-app='app'>
         <div>MIN: <input name='min' type="number" ng-model='min'></div>
         <div>MAX: <input name='max' type="number" ng-model='max'></div>
-        <div>VALUE: <input name='value' type="text" ya-min='min' ya-max='max' ng-model='value'></div>
-        <div ng-if='myForm.value.$error.min'>MIN ERROR</div>
-        <div ng-if='myForm.value.$error.max'>MAX ERROR</div>
-    </form>
+        <form name='myForm'>
+            <div>nonstrict</div>
+            <div>VALUE: <input name='value' type="text" ya-min='min' ya-max='max' ng-model='value'></div>
+            <div ng-if='myForm.value.$error.min'>MIN ERROR</div>
+            <div ng-if='myForm.value.$error.max'>MAX ERROR</div>
+            <div>strict</div>
+            <div>VALUE: <input name='otherValue' type="text" ya-min='min' ya-max='max' ng-model='otherValue' ya-min-strict ya-max-strict></div>
+            <div ng-if='myForm.otherValue.$error.min'>MIN ERROR</div>
+            <div ng-if='myForm.otherValue.$error.max'>MAX ERROR</div>
+        </form>
+    </div>
 </head>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>

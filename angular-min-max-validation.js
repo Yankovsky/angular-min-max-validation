@@ -1,4 +1,3 @@
-// All credits go to angular team
 angular.module('minMaxValidations', [
 ]).directive('yaMin', function() {
     return {
@@ -6,12 +5,13 @@ angular.module('minMaxValidations', [
         require: 'ngModel',
         link: function(scope, element, attrs, ctrl) {
             var minValue;
+            var strict = attrs.hasOwnProperty('yaMinStrict');
             ctrl.$validators.min = function(value) {
                 if (ctrl.$isEmpty(value) || angular.isUndefined(minValue)) {
                     return true;
                 } else {
                     var valueAsNumber = angular.isNumber(value) ? value : parseFloat(value, 10);
-                    return valueAsNumber >= minValue;
+                    return strict ? valueAsNumber > minValue : valueAsNumber >= minValue;
                 }
             };
             scope.$watch(attrs.yaMin, function(value) {
@@ -29,12 +29,13 @@ angular.module('minMaxValidations', [
         require: 'ngModel',
         link: function(scope, element, attrs, ctrl) {
             var maxValue;
+            var strict = attrs.hasOwnProperty('yaMaxStrict');
             ctrl.$validators.max = function(value) {
                 if (ctrl.$isEmpty(value) || angular.isUndefined(maxValue)) {
                     return true;
                 } else {
                     var valueAsNumber = angular.isNumber(value) ? value : parseFloat(value, 10);
-                    return valueAsNumber <= maxValue;
+                    return strict ? valueAsNumber < maxValue : valueAsNumber <= maxValue;
                 }
             };
 

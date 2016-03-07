@@ -9,3 +9,7 @@ To install:
 `npm install --save-dev angular-min-max-validation`
 
 See [demo](http://yankovsky.github.io/angular-min-max-validation/).
+
+ya-min-strict and ya-max-strict change equality operator to strict version, e.g. >= to >.
+
+Default is nonstrict operators (>=, <=).
